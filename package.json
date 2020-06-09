@@ -1,11 +1,13 @@
 {
   "name": "geohex",
-  "version": "1.0.0",
-  "description": "Hexagonal geo-coding system",
+  "version": "0.0.1",
+  "description": "Hexagonal geocoding system",
+  "keywords": ["hexagon", "geocoding", "coordinate system"],
   "author": "Leon Vinogradov",
   "license": "MIT",
+  "module": "src/index.js",
   "scripts": {
-    "build": "webpack --config-name library"
+    "build": "webpack"
   },
   "devDependencies": {
     "standard": "^14.3.4",
