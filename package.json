@@ -1,8 +1,9 @@
 {
   "name": "geohex",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Hexagonal geocoding system",
   "keywords": [
+    "geohex",
     "hexagon",
     "geocoding",
     "hexagonal",
@@ -10,6 +11,7 @@
   ],
   "author": "Leonid Vinogradov <win.leon@pm.me>",
   "license": "MIT",
+  "browser": "lib/geohex.min.js",
   "module": "src/index.js",
   "scripts": {
     "build": "webpack"
