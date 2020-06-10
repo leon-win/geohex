@@ -1,16 +1,9 @@
 {
   "name": "geohex",
-  "version": "0.0.2",
-  "description": "Hexagonal geocoding system",
-  "keywords": [
-    "geohex",
-    "hexagon",
-    "geocoding",
-    "hexagonal",
-    "coordinate system"
-  ],
-  "author": "Leonid Vinogradov <win.leon@pm.me>",
-  "license": "MIT",
+  "version": "0.0.3",
+  "homepage": "https://github.com/leon-win/geohex#readme",
+  "description": "Hexagonal geocoding system, library for converting geographic coordinates to hexagonal grid and vice versa",
+  "main": "lib/geohex.min.js",
   "browser": "lib/geohex.min.js",
   "module": "src/index.js",
   "scripts": {
@@ -28,7 +21,16 @@
   "bugs": {
     "url": "https://github.com/leon-win/geohex/issues"
   },
-  "homepage": "https://github.com/leon-win/geohex",
+  "author": "Leonid Vinogradov <win.leon@pm.me>",
+  "keywords": [
+    "geohex",
+    "hexagon",
+    "hexagonal",
+    "geocoding",
+    "converting",
+    "coordinate system"
+  ],
+  "license": "MIT",
   "standard": {
     "ignore": [
       "dist/"
