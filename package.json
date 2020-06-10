@@ -2,8 +2,13 @@
   "name": "geohex",
   "version": "0.0.1",
   "description": "Hexagonal geocoding system",
-  "keywords": ["hexagon", "geocoding", "coordinate system"],
-  "author": "Leon Vinogradov",
+  "keywords": [
+    "hexagon",
+    "geocoding",
+    "hexagonal",
+    "coordinate system"
+  ],
+  "author": "Leonid Vinogradov <win.leon@pm.me>",
   "license": "MIT",
   "module": "src/index.js",
   "scripts": {
@@ -14,6 +19,14 @@
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leon-win/geohex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leon-win/geohex/issues"
+  },
+  "homepage": "https://github.com/leon-win/geohex",
   "standard": {
     "ignore": [
       "dist/"
