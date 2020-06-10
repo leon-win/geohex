@@ -1,28 +1,86 @@
 # geohex
+
 [![JavaScript Standard Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com)
 [![License: MIT](https://img.shields.io/github/license/leon-win/node-auth-tokens?style=flat-square)](http://opensource.org/licenses/MIT)
 
-This is ECMAScript 2015 fork of [GeoHex](http://geohex.net/) hexagonal geocoding system originally made by [@sa2da](http://twitter.com/sa2da).
+Hexagonal geocoding system, library for converting geographic coordinates to hexagonal grid and vice versa. This is ECMAScript 2015 fork of [GeoHex](http://geohex.net) which was originally made by [@sa2da](http://twitter.com/sa2da).
+
+## Installation
+
+```sh 
+npm install geohex --save
+```
+
+Or grab from [jsDelivr CDN](https://www.jsdelivr.com/package/npm/geohex):
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/geohex@0.0.3/lib/geohex.min.js"></script>
+```
+
+Or from [unpkg CDN](https://unpkg.com/geohex):
+
+```html
+<script src="https://unpkg.com/geohex@0.0.3/lib/geohex.min.js"></script>
+```
+
+## Usage
+
+
+```js
+// ES6 Modules
+import { getCellByCode } from 'geohex'
+
+// CommonJS
+const { getCellByCode } = require('geohex')
+```
+
+Or:
+
+```html
+<script src="geohex/lib/geohex.min.js"></script>
+```
+
+Or with JS modules:
+
+```html
+<script type="module">
+  import { getCellByCode } from 'geohex/lib/geohex.min.js'
+</script>
+```
 
 ## Examples
 
 ```javascript
-getCellByCode('QG') // code
-// Cell { lat: 56.76599911636905, lon: 39.999999999999986, x: 4, y: 2, code: 'QG' }
+getCellByCode('QH3360') // code
+getCellByLocation(59.943201, 30.324086, 4) // lat, lon, zoomLevel
+getCellByXY(326, 203, 4) // x, y, zoomLevel
 
-getCellByLocation(56.76599911636905, 39.999999999999986, 0) // lat, lon, zoomLevel
-// Cell { lat: 56.76599911636905, lon: 39.999999999999986, x: 4, y: 2, code: 'QG' }
+// Each function return hexagonal grid cell instance with five properties:
+// {
+//   lat: 59.97788999458348,
+//   lon: 30.37037037037038,
+//   x: 326,
+//   y: 203,
+//   code: 'QH3360'
+// }
 
-getCellByXY(4, 2, 0) // x, y, zoomLevel
-// Cell { lat: 56.76599911636905, lon: 39.999999999999986, x: 4, y: 2, code: 'QG' }
+// and three methods:
 
-getCellByCode('QG').getHexCoords()
-// [ { lat: 56.76599911636905, lon: 26.66666666666665 },
-//   { lat: 62.5793731923105, lon: 33.33333333333332 },
-//   { lat: 62.5793731923105, lon: 46.66666666666666 },
-//   { lat: 56.76599911636905, lon: 53.33333333333332 },
-//   { lat: 49.8887630323615, lon: 46.66666666666666 },
-//   { lat: 49.8887630323615, lon: 33.33333333333332 } ]
+getCellByCode('QH3360').getZoomLevel()
+// 4
+
+getCellByCode('QH3360').getHexSize():
+// 9162.098006401464
+
+getCellByCode('QH3360').getHexCoords():
+// [
+//   { lat: 59.97788999458348, lon: 30.205761316872437 },
+//   { lat: 60.0491386517641, lon: 30.288065843621407 },
+//   { lat: 60.0491386517641, lon: 30.45267489711935 },
+//   { lat: 59.97788999458348, lon: 30.53497942386832 },
+//   { lat: 59.90648768479527, lon: 30.45267489711935 },
+//   { lat: 59.90648768479527, lon: 30.288065843621407 }
+// ]
 ```
 
 ## License
