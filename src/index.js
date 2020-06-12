@@ -9,8 +9,6 @@ import {
 } from './helpers.js'
 
 const CONSTANT_K = Math.tan(Math.PI * (30 / 180))
-const CACHE_ON = false
-const _cellCache = {}
 
 export function getCellByCode (code) {
   const { x, y } = getXYByCode(code)
@@ -47,17 +45,7 @@ export function getCellByXY (x, y, zoomLevel) {
     locX = -180
   }
 
-  const code = getCode(modX, modY, locX, zoomLevel)
-
-  if (CACHE_ON) {
-    if (_cellCache[code]) {
-      return _cellCache[code]
-    }
-
-    return (_cellCache[code] = new Cell(locY, locX, x, y, code))
-  }
-
-  return new Cell(locY, locX, x, y, code)
+  return new Cell(locY, locX, x, y, getCode(modX, modY, locX, zoomLevel))
 }
 
 export function getXYByCode (code) {
