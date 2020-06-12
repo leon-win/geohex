@@ -1,7 +1,8 @@
 # geohex
 
+[![Build Status](https://img.shields.io/travis/leon-win/geohex?style=flat-square)](https://travis-ci.org/leon-win/geohex)
 [![JavaScript Standard Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com)
-[![License: MIT](https://img.shields.io/github/license/leon-win/node-auth-tokens?style=flat-square)](http://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/github/license/leon-win/geohex?style=flat-square)](http://opensource.org/licenses/MIT)
 
 Hexagonal geocoding system, library for converting geographic coordinates to hexagonal grid cell and vice versa. This is ECMAScript 2015 fork of [GeoHex](http://geohex.net) which was originally made by [@sa2da](http://twitter.com/sa2da).
 
