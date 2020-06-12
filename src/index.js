@@ -1,6 +1,7 @@
+import Cell from './Cell.js'
+
 import {
   CODE_SYMBOLS,
-  Cell,
   calcHexSize,
   adjustXY,
   loc2xy,
