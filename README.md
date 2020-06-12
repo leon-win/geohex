@@ -17,7 +17,7 @@ Or grab from [jsDelivr CDN](https://www.jsdelivr.com/package/npm/geohex):
 <script src="https://cdn.jsdelivr.net/npm/geohex@0.0.4/lib/geohex.min.js"></script>
 ```
 
-Or from [unpkg CDN](https://unpkg.com/geohex):
+Or from [unpkg CDN](https://unpkg.com/geohex/):
 
 ```html
 <script src="https://unpkg.com/geohex@0.0.4/lib/geohex.min.js"></script>
