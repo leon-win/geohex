@@ -1,15 +1,19 @@
 const testModes = require('./testModes.js')
 const [,, ...args] = process.argv
+const VERBOSE_MODE = args.includes('--verbose')
 
 start(args)
 
-function start (modes) {
+function start (args) {
+  const modes = testModes.filter(
+    ({ name }) => args.includes(name)
+  )
   let results = []
 
   if (modes.length) {
     results = runTests(modes)
   } else {
-    results = runAllTests()
+    results = runTests(testModes)
   }
 
   if (results.length) {
@@ -20,28 +24,13 @@ function start (modes) {
 function runTests (modes) {
   const results = []
 
-  console.log(`Run geohex e2e tests: ${modes.join(', ')}`)
+  console.log(`Run geohex e2e tests in modes: ${modes.map(({ name }) => name).join(', ')}`)
 
-  modes.forEach((name) => {
-    const mode = testModes.find(
-      (mode) => mode.name === name
-    )
-
-    if (!mode) {
-      console.log(`Test mode "${name}" not found`)
-      console.log(`Available modes: ${testModes.map(mode => mode.name).join(', ')}`)
-    } else {
-      results.push(runTest(mode))
-    }
+  modes.forEach((mode) => {
+    results.push(runTest(mode))
   })
 
   return results
-}
-
-function runAllTests () {
-  console.log('Run all geohex e2e tests')
-
-  return testModes.map((mode) => runTest(mode))
 }
 
 function runTest (mode) {
@@ -52,9 +41,10 @@ function runTest (mode) {
 
   testData.forEach((line) => {
     const result = testLogic(line)
-    const resultPrefix = result.err ? '[NG]' : '[OK]'
 
-    console.log(`${resultPrefix} ${result.message}`)
+    if (VERBOSE_MODE) {
+      console.log(`${result.err ? '[ERROR]' : '[OK]'} ${result.message}`)
+    }
 
     failedTestsCount += result.err
   })
@@ -83,16 +73,27 @@ function printTestResult ({
 }
 
 function printTotalResults (results = []) {
+  const failedModes = []
+  const successModes = []
   let totalFailedTestsCount = 0
 
   results.forEach((modeResult) => {
     if (modeResult) {
-      totalFailedTestsCount += modeResult.failedTestsCount
-      printTestResult(modeResult)
+      if (modeResult.failedTestsCount > 0) {
+        failedModes.push(modeResult.mode.name)
+        totalFailedTestsCount += modeResult.failedTestsCount
+      } else {
+        successModes.push(modeResult.mode.name)
+      }
+
+      if (VERBOSE_MODE) {
+        printTestResult(modeResult)
+      }
     }
   })
 
   console.log()
-  console.log('Total test modes:', results.length)
+  console.log(`Success test modes: [${successModes.join(', ')}]`)
+  console.log(`Failed test modes: [${failedModes.join(', ')}]`)
   console.log(`Total failed tests: ${totalFailedTestsCount}`)
 }
