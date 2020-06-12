@@ -1,9 +1,4 @@
-const {
-  getCellByCode,
-  getCellByLocation,
-  getCellByXY,
-  getXYByLocation
-} = require('./../../lib/geohex.min.js')
+const Geohex = require('./../../lib/geohex.min.js')
 
 module.exports = [
   {
@@ -15,7 +10,7 @@ module.exports = [
       const lat = parseFloat(testCase[1])
       const lon = parseFloat(testCase[2])
       const code = testCase[0]
-      const cell = getCellByCode(code)
+      const cell = Geohex.getCellByCode(code)
 
       return {
         err: (Math.abs(cell.lat - lat) < 0.0000000001 && Math.abs(cell.lon - lon) < 0.0000000001) ? 0 : 1,
@@ -32,7 +27,7 @@ module.exports = [
       const code = testCase[0]
       const X = parseInt(testCase[1])
       const Y = parseInt(testCase[2])
-      const cell = getCellByCode(code)
+      const cell = Geohex.getCellByCode(code)
 
       return {
         err: (cell.x === X) && (cell.y === Y) ? 0 : 1,
@@ -50,7 +45,7 @@ module.exports = [
       const lat = parseFloat(testCase[1])
       const lon = parseFloat(testCase[2])
       const code = testCase[3]
-      const cell = getCellByLocation(lat, lon, level)
+      const cell = Geohex.getCellByLocation(lat, lon, level)
 
       return {
         err: cell.code === code ? 0 : 1,
@@ -69,7 +64,7 @@ module.exports = [
       const lon = parseFloat(testCase[2])
       const X = parseInt(testCase[3])
       const Y = parseInt(testCase[4])
-      const XY = getXYByLocation(lat, lon, level)
+      const XY = Geohex.getXYByLocation(lat, lon, level)
 
       return {
         err: (XY.x === X) && (XY.y === Y) ? 0 : 1,
@@ -87,7 +82,7 @@ module.exports = [
       const X = parseInt(testCase[1])
       const Y = parseInt(testCase[2])
       const code = testCase[3]
-      const cell = getCellByXY(X, Y, level)
+      const cell = Geohex.getCellByXY(X, Y, level)
 
       return {
         err: cell.code === code ? 0 : 1,

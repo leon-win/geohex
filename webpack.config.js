@@ -6,7 +6,7 @@ module.exports = {
   output: {
     filename: 'geohex.min.js',
     path: path.resolve(__dirname, 'lib'),
-    library: 'geohex',
+    library: 'Geohex',
     libraryTarget: 'umd',
     globalObject: 'this'
   }

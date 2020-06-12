@@ -143,3 +143,11 @@ export function getXYByLocation (lat, lon, zoomLevel) {
 
   return adjustXY(x, y, zoomLevel)
 }
+
+export default {
+  getCellByCode,
+  getCellByLocation,
+  getCellByXY,
+  getXYByCode,
+  getXYByLocation
+}

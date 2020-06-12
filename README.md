@@ -4,7 +4,9 @@
 [![JavaScript Standard Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com)
 [![License: MIT](https://img.shields.io/github/license/leon-win/geohex?style=flat-square)](http://opensource.org/licenses/MIT)
 
-Hexagonal geocoding system, library for converting geographic coordinates to hexagonal grid cell and vice versa. This is ECMAScript 2015 fork of [GeoHex](http://geohex.net) which was originally made by [@sa2da](http://twitter.com/sa2da).
+Hexagonal geocoding system, library for converting geographic coordinates to hexagonal grid cells and vice versa.
+
+This is ECMAScript 2015 fork of [GeoHex library](http://geohex.net) which was originally made by [@sa2da](http://twitter.com/sa2da).
 
 ## Installation
 
@@ -26,54 +28,80 @@ Or from [unpkg CDN](https://unpkg.com/geohex/):
 
 ## Usage
 
+### ES6 Modules 
 
 ```js
-// ES6 Modules
-import { getCellByCode } from 'geohex'
-
-// CommonJS
-const { getCellByCode } = require('geohex')
+import Geohex from 'geohex'
+// or import { getCellByCode } from 'geohex'
 ```
 
-Or:
+### CommonJS
+
+```js
+const Geohex = require('geohex')
+// or const { getCellByCode } = require('geohex')
+```
+
+### JS modules:
+
+```html
+<script type="module">
+  import Geohex from 'geohex/src/index.js'
+  // or import { getCellByCode } from 'geohex/src/index.js'
+</script>
+```
+
+### Global variable
 
 ```html
 <script src="geohex/lib/geohex.min.js"></script>
 ```
 
-Or with JS modules:
-
-```html
-<script type="module">
-  import { getCellByCode } from 'geohex/lib/geohex.min.js'
-</script>
-```
-
 ## Examples
 
 ```javascript
-getCellByCode('QH3360') // code
-getCellByLocation(59.943201, 30.324086, 4) // lat, lon, zoomLevel
-getCellByXY(326, 203, 4) // x, y, zoomLevel
+// Get Geohex cell instance by code
+const geohexCell = Geohex.getCellByCode('QH3360')
 
-// Each function return hexagonal grid cell instance with five properties:
+// Get Geohex cell instance by geographic coordinates and zoom level
+const geohexCell = Geohex.getCellByLocation(59.943201, 30.324086, 4)
+
+// Get Geohex cell instance by cell coordinates and zoomLevel
+const geohexCell = Geohex.getCellByXY(326, 203, 4)
+
+// Get Geohex cell coordinates by geographic coordinates and zoom level
+Geohex.getXYByLocation(59.943201, 30.324086, 4):
+// { x: 326, y: 203 }
+
+// Get Geohex cell coordinates by code
+Geohex.getXYByCode('QH3360')
+// { x: 326, y: 203 }
+```
+
+### Geohex cell instance
+
+Geohex cell instance is hexagon grid cell with properties and methods:
+
+```javascript
+console.log(JSON.stringify(geohexCell, null, 2))
 // {
-//   lat: 59.97788999458348,
-//   lon: 30.37037037037038,
-//   x: 326,
-//   y: 203,
-//   code: 'QH3360'
+//   "lat": 59.97788999458348,
+//   "lon": 30.37037037037038,
+//   "x": 326,
+//   "y": 203,
+//   "code": "QH3360"
 // }
 
-// and three methods:
-
-getCellByCode('QH3360').getZoomLevel()
+// Cell zoom level
+geohexCell.getZoomLevel()
 // 4
 
-getCellByCode('QH3360').getHexSize():
+// Cell side length in degrees
+geohexCell.getHexSize():
 // 9162.098006401464
 
-getCellByCode('QH3360').getHexCoords():
+// Geographic coordinates of hexagon corners
+geohexCell.getHexCoords():
 // [
 //   { lat: 59.97788999458348, lon: 30.205761316872437 },
 //   { lat: 60.0491386517641, lon: 30.288065843621407 },
@@ -85,9 +113,11 @@ getCellByCode('QH3360').getHexCoords():
 ```
 
 ## Alternatives
-* http://www.geohex.org -- original GeoHex library
-* https://github.com/uupaa/GeoHex -- GeoHex v3.2 with TypeScript implementation
-* https://github.com/teralytics/geohex -- GeoHex implementation in Scala. Forked from [geohex4j](https://github.com/chsh/geohex4j)
+* [Original GeoHex library](http://www.geohex.org)
+* [GeoHex TypeScript implementation](https://github.com/uupaa/GeoHex)
+* [GeoHex Dart implementation](https://github.com/NiKoTron/geohex)
+* [GeoHex Scala implementation](https://github.com/teralytics/geohex)
+* [GeoHex Java implementation](https://github.com/chsh/geohex4j)
 
 ## License
 [MIT](http://opensource.org/licenses/MIT)

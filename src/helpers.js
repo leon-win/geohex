@@ -1,4 +1,5 @@
 const CONSTANT_BASE = 20037508.34
+
 export const CODE_SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 
 export function calcHexSize (zoomLevel) {
