@@ -17,13 +17,13 @@ npm install geohex --save
 Or grab from [jsDelivr CDN](https://www.jsdelivr.com/package/npm/geohex):
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/geohex@0.0.4/lib/geohex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/geohex@0.0.5/lib/geohex.min.js"></script>
 ```
 
 Or from [unpkg CDN](https://unpkg.com/geohex/):
 
 ```html
-<script src="https://unpkg.com/geohex@0.0.4/lib/geohex.min.js"></script>
+<script src="https://unpkg.com/geohex@0.0.5/lib/geohex.min.js"></script>
 ```
 
 ## Usage
