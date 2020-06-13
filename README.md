@@ -112,12 +112,14 @@ geohexCell.getHexCoords():
 // ]
 ```
 
-## Alternatives
+## Other implementations
 * [Original GeoHex library](http://www.geohex.org)
 * [GeoHex TypeScript implementation](https://github.com/uupaa/GeoHex)
 * [GeoHex Dart implementation](https://github.com/NiKoTron/geohex)
+* [GeoHex Swift implementation](https://github.com/nekowen/GeoHex3.swift)
 * [GeoHex Scala implementation](https://github.com/teralytics/geohex)
 * [GeoHex Java implementation](https://github.com/chsh/geohex4j)
+* [GeoHex C# implementation](https://github.com/mattak/GeoHex.cs)
 
 ## License
 [MIT](http://opensource.org/licenses/MIT)
