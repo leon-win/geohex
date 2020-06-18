@@ -60,6 +60,8 @@ const Geohex = require('geohex')
 
 ## Examples
 
+[Online demo of Geohex usage](https://leon-win.github.io/geohex-examples/)
+
 ```javascript
 // Get Geohex cell instance by code
 const geohexCell = Geohex.getCellByCode('QH3360')

@@ -1,8 +1,8 @@
 {
   "name": "geohex",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "homepage": "https://leon-win.github.io/geohex/",
-  "description": "Hexagonal geocoding system, library for converting geographic coordinates to hexagonal grid and vice versa",
+  "description": "Hexagonal geocoding system, library for converting geographic coordinates to hexagonal grid cell and vice versa",
   "main": "lib/geohex.min.js",
   "browser": "lib/geohex.min.js",
   "module": "src/index.js",
