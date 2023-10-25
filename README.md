@@ -1,8 +1,8 @@
 # Geohex
 
 [![Build Status](https://img.shields.io/travis/leon-win/geohex?style=flat-square)](https://travis-ci.org/leon-win/geohex)
-[![npm](https://img.shields.io/npm/v/geohex?style=flat-square)](https://www.npmjs.com/package/geohex)
-[![JavaScript Standard Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com)
+[![npm](https://img.shields.io/npm/v/geohex?logo=npm&style=flat-square)](https://www.npmjs.com/package/geohex)
+[![Code style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?logo=prettier&style=flat-square)](https://prettier.io)
 [![License: MIT](https://img.shields.io/github/license/leon-win/geohex?style=flat-square)](http://opensource.org/licenses/MIT)
 
 Hexagonal geocoding system, library for converting geographic coordinates to hexagonal grid cells and vice versa.
@@ -11,7 +11,7 @@ This is ECMAScript 2015 fork of [GeoHex library](http://geohex.net) which was or
 
 ## Installation
 
-```sh 
+```sh
 npm install geohex --save
 ```
 
@@ -29,17 +29,17 @@ Or from [unpkg CDN](https://unpkg.com/geohex/):
 
 ## Usage
 
-### ES6 Modules 
+### ES6 Modules
 
 ```js
-import Geohex from 'geohex'
+import Geohex from "geohex";
 // or import { getCellByCode } from 'geohex'
 ```
 
 ### CommonJS
 
 ```js
-const Geohex = require('geohex')
+const Geohex = require("geohex");
 // or const { getCellByCode } = require('geohex')
 ```
 
@@ -47,7 +47,7 @@ const Geohex = require('geohex')
 
 ```html
 <script type="module">
-  import Geohex from 'geohex/src/index.js'
+  import Geohex from "geohex/src/index.js";
   // or import { getCellByCode } from 'geohex/src/index.js'
 </script>
 ```
@@ -116,15 +116,17 @@ geohexCell.getHexCoords():
 ```
 
 ## Other implementations
-* [Original GeoHex library](http://www.geohex.org)
-* [GeoHex TypeScript implementation](https://github.com/uupaa/GeoHex)
-* [GeoHex Dart implementation](https://github.com/NiKoTron/geohex)
-* [GeoHex Swift implementation](https://github.com/nekowen/GeoHex3.swift)
-* [GeoHex Scala implementation](https://github.com/teralytics/geohex)
-* [GeoHex Java implementation](https://github.com/chsh/geohex4j)
-* [GeoHex C# implementation](https://github.com/mattak/GeoHex.cs)
+
+- [Original GeoHex library](http://www.geohex.org)
+- [GeoHex TypeScript implementation](https://github.com/uupaa/GeoHex)
+- [GeoHex Dart implementation](https://github.com/NiKoTron/geohex)
+- [GeoHex Swift implementation](https://github.com/nekowen/GeoHex3.swift)
+- [GeoHex Scala implementation](https://github.com/teralytics/geohex)
+- [GeoHex Java implementation](https://github.com/chsh/geohex4j)
+- [GeoHex C# implementation](https://github.com/mattak/GeoHex.cs)
 
 ## License
+
 [MIT](http://opensource.org/licenses/MIT)
 
 © 2009 @sa2da (http://twitter.com/sa2da) http://www.geohex.org
