@@ -18,17 +18,7 @@ module.exports = [
           Math.abs(cell.lon - lon) < 0.0000000001
             ? 0
             : 1,
-        message:
-          code +
-          ": " +
-          cell.lat +
-          ", " +
-          cell.lon +
-          " (" +
-          lat +
-          ", " +
-          lon +
-          ")",
+        message: `${code}: ${cell.lat}, ${cell.lon} (${lat}, ${lon})`,
       };
     },
   },
@@ -45,8 +35,7 @@ module.exports = [
 
       return {
         err: cell.x === X && cell.y === Y ? 0 : 1,
-        message:
-          code + ": " + cell.x + ", " + cell.y + " (" + X + ", " + Y + ")",
+        message: `${code}: ${cell.x}, ${cell.y} (${X}, ${Y})`,
       };
     },
   },
@@ -64,17 +53,7 @@ module.exports = [
 
       return {
         err: cell.code === code ? 0 : 1,
-        message:
-          level +
-          ", " +
-          lat +
-          ", " +
-          lon +
-          ": " +
-          cell.code +
-          " (" +
-          code +
-          ")",
+        message: `${level}, ${lat}, ${lon}: ${cell.code} (${code})`,
       };
     },
   },
@@ -93,21 +72,7 @@ module.exports = [
 
       return {
         err: XY.x === X && XY.y === Y ? 0 : 1,
-        message:
-          level +
-          ", " +
-          lat +
-          ", " +
-          lon +
-          ": " +
-          XY.x +
-          ", " +
-          XY.y +
-          " (" +
-          X +
-          ", " +
-          Y +
-          ")",
+        message: `${level}, ${lat}, ${lon}: ${XY.x}, ${XY.y} (${X}, ${Y})`,
       };
     },
   },
@@ -125,8 +90,7 @@ module.exports = [
 
       return {
         err: cell.code === code ? 0 : 1,
-        message:
-          level + ", " + X + ", " + Y + ": " + cell.code + " (" + code + ")",
+        message: `${level}, ${X}, ${Y}: ${cell.code} (${code})`,
       };
     },
   },
