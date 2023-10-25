@@ -1,6 +1,5 @@
 # Geohex
 
-[![Build Status](https://img.shields.io/travis/leon-win/geohex?style=flat-square)](https://travis-ci.org/leon-win/geohex)
 [![npm](https://img.shields.io/npm/v/geohex?logo=npm&style=flat-square)](https://www.npmjs.com/package/geohex)
 [![Code style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?logo=prettier&style=flat-square)](https://prettier.io)
 [![License: MIT](https://img.shields.io/github/license/leon-win/geohex?style=flat-square)](http://opensource.org/licenses/MIT)
